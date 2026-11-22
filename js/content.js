@@ -64,7 +64,7 @@ window.SITE = {
       weekday: 'Wednesday',
       day: '16',
       month: 'Dec 2026',
-      banglaDate: '১ পৌষ ১৪৩৩',
+      banglaDate: '১লা পৌষ ১৪৩৩',
       time: 'at one o’clock in the afternoon',
       venue: 'The Royal Garden',
       city: 'Plot No 9/B, Sector 08, Uttara\nDhaka-Mymensingh Highway\nNear Abdullahpur Bus Stand, Dhaka 1230'
@@ -175,7 +175,7 @@ window.SITE = {
       weekday: 'বুধবার',
       day: '১৬',
       month: 'ডিসেম্বর ২০২৬',
-      banglaDate: '১ পৌষ ১৪৩৩',
+      banglaDate: '১লা পৌষ ১৪৩৩',
       time: 'দুপুর ১টা',
       venue: 'দ্য রয়্যাল গার্ডেন',
       city: 'প্লট নং ৯/বি, সেক্টর ০৮, উত্তরা\nঢাকা-ময়মনসিংহ মহাসড়ক\nআব্দুল্লাহপুর বাসস্ট্যান্ডের কাছে, ঢাকা ১২৩০'
