@@ -468,7 +468,15 @@ html.is-revealed .card-wrap { opacity: 1; transform: translate3d(0, 0, 0) scale(
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(180deg, #fbf5ea, #f3e6cf);
+  /* maroon corner flourishes and a soft blush glow, matching the red theme */
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg transform='translate(0 0) scale(1 1)' opacity='.75'%3E%3Cg fill='none' stroke='%238a2336' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M3 36V10Q3 3 10 3H36'/%3E%3Cpath d='M9 26Q9 9 26 9' stroke-opacity='.7'/%3E%3Cpath d='M14 14q9 -1 13 -9q-9 1 -13 9z' fill='%238a2336' fill-opacity='.18'/%3E%3Cpath d='M14 14q-1 9 -9 13q1 -9 9 -13z' fill='%238a2336' fill-opacity='.18'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.6' fill='%238a2336'/%3E%3Ccircle cx='36' cy='3' r='1.2' fill='%238a2336'/%3E%3Ccircle cx='3' cy='36' r='1.2' fill='%238a2336'/%3E%3C/g%3E%3C/svg%3E") top 7px left 7px / 38px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg transform='translate(40 0) scale(-1 1)' opacity='.75'%3E%3Cg fill='none' stroke='%238a2336' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M3 36V10Q3 3 10 3H36'/%3E%3Cpath d='M9 26Q9 9 26 9' stroke-opacity='.7'/%3E%3Cpath d='M14 14q9 -1 13 -9q-9 1 -13 9z' fill='%238a2336' fill-opacity='.18'/%3E%3Cpath d='M14 14q-1 9 -9 13q1 -9 9 -13z' fill='%238a2336' fill-opacity='.18'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.6' fill='%238a2336'/%3E%3Ccircle cx='36' cy='3' r='1.2' fill='%238a2336'/%3E%3Ccircle cx='3' cy='36' r='1.2' fill='%238a2336'/%3E%3C/g%3E%3C/svg%3E") top 7px right 7px / 38px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg transform='translate(0 40) scale(1 -1)' opacity='.75'%3E%3Cg fill='none' stroke='%238a2336' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M3 36V10Q3 3 10 3H36'/%3E%3Cpath d='M9 26Q9 9 26 9' stroke-opacity='.7'/%3E%3Cpath d='M14 14q9 -1 13 -9q-9 1 -13 9z' fill='%238a2336' fill-opacity='.18'/%3E%3Cpath d='M14 14q-1 9 -9 13q1 -9 9 -13z' fill='%238a2336' fill-opacity='.18'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.6' fill='%238a2336'/%3E%3Ccircle cx='36' cy='3' r='1.2' fill='%238a2336'/%3E%3Ccircle cx='3' cy='36' r='1.2' fill='%238a2336'/%3E%3C/g%3E%3C/svg%3E") bottom 7px left 7px / 38px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cg transform='translate(40 40) scale(-1 -1)' opacity='.75'%3E%3Cg fill='none' stroke='%238a2336' stroke-width='1' stroke-linecap='round'%3E%3Cpath d='M3 36V10Q3 3 10 3H36'/%3E%3Cpath d='M9 26Q9 9 26 9' stroke-opacity='.7'/%3E%3Cpath d='M14 14q9 -1 13 -9q-9 1 -13 9z' fill='%238a2336' fill-opacity='.18'/%3E%3Cpath d='M14 14q-1 9 -9 13q1 -9 9 -13z' fill='%238a2336' fill-opacity='.18'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.6' fill='%238a2336'/%3E%3Ccircle cx='36' cy='3' r='1.2' fill='%238a2336'/%3E%3Ccircle cx='3' cy='36' r='1.2' fill='%238a2336'/%3E%3C/g%3E%3C/svg%3E") bottom 7px right 7px / 38px no-repeat,
+    radial-gradient(120% 22% at 50% 0%, rgba(138, 35, 54, .07), transparent 70%),
+    radial-gradient(120% 22% at 50% 100%, rgba(138, 35, 54, .07), transparent 70%),
+    linear-gradient(180deg, #fbf5ea, #f3e6cf);
   border: 1px solid rgba(156, 117, 67, .55);
   outline: 1px solid rgba(156, 117, 67, .3);
   outline-offset: -6px;
@@ -1028,7 +1036,7 @@ html[lang="bn"] .footer__top { font-size: 14px; }
   .pill-btn { height: 42px; padding: 0 14px; }
   .hero { padding-top: calc(var(--curtain-h) + 84px); padding-bottom: 108px; }
   .card__body { padding: 14px 14px 18px; }
-  .card__panel { padding: 22px 12px 22px; }
+  .card__panel { padding: 36px 12px 40px; }
   .card__day { font-size: 48px; }
   .card__request { font-size: 18px; }
   .envelope__intro { top: calc(var(--curtain-h) + 12vh); }
