@@ -189,6 +189,22 @@
     var h2 = panel.offsetHeight;
     root.lang = cur; fillCard(SITE[cur]);
     panel.style.minHeight = Math.ceil(Math.max(h1, h2)) + 'px';
+    fitCard();
+  }
+
+  // Scale the card down (never up) so the opened invitation and the scroll
+  // prompt fit on one screen. The negative margin removes the space the
+  // unscaled card would otherwise still take up.
+  function fitCard() {
+    var wrap = $('.card-wrap'), hero = $('.hero');
+    wrap.style.setProperty('--fit', '1');
+    wrap.style.marginBottom = '';
+    var cs = getComputedStyle(hero);
+    var avail = window.innerHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    var h = wrap.offsetHeight;
+    var s = Math.max(0.72, Math.min(1, avail / h));
+    wrap.style.setProperty('--fit', s.toFixed(3));
+    wrap.style.marginBottom = (-(h * (1 - s))).toFixed(1) + 'px';
   }
   if (document.fonts && document.fonts.load) {
     Promise.all([
@@ -214,8 +230,12 @@
       setTimeout(function () { clearInterval(iv); fontsReady = true; equalizeCard(); res(); }, 1500);
     });
   }
-  var resizeTimer;
+  // Only refit when the width changes, so the phone address bar showing or
+  // hiding while scrolling does not make the card jump.
+  var resizeTimer, lastWidth = window.innerWidth;
   window.addEventListener('resize', function () {
+    if (window.innerWidth === lastWidth) return;
+    lastWidth = window.innerWidth;
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(equalizeCard, 150);
   });
