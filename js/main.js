@@ -18,6 +18,13 @@
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
     });
   }
+  // In English text, wrap runs of Bangla script so they can be sized to match
+  function bnInline(html) {
+    if (state.lang !== 'en') return html;
+    return html.replace(/[\u0980-\u09FF][\u0980-\u09FF\s,।]*[\u0980-\u09FF।]/g, function (m) {
+      return '<span class="bn-inline" lang="bn">' + m + '</span>';
+    });
+  }
   var BN_DIGITS = '০১২৩৪৫৬৭৮৯';
   function digits(str) {
     str = String(str);
@@ -85,7 +92,7 @@
       return '<li style="--i:' + i + '"><a class="menu__link" href="#' + n.id + '">' + esc(n.label) + '</a></li>';
     }).join('');
 
-    $('#storyBody').innerHTML = t.story.body.map(function (p) { return '<p>' + esc(p) + '</p>'; }).join('');
+    $('#storyBody').innerHTML = t.story.body.map(function (p) { return '<p>' + bnInline(esc(p)) + '</p>'; }).join('');
 
     $('#storyTimeline').innerHTML = t.story.milestones.map(function (m, i) {
       return '<li class="reveal" style="--i:' + i + '">' +
@@ -202,7 +209,9 @@
     var cs = getComputedStyle(hero);
     var avail = window.innerHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
     var h = wrap.offsetHeight;
-    var s = Math.max(0.72, Math.min(1, avail / h));
+    // phones: keep the card wide (shrink at most 6%); larger screens may shrink more
+    var floor = window.innerWidth < 640 ? 0.94 : 0.72;
+    var s = Math.max(floor, Math.min(1, avail / h));
     wrap.style.setProperty('--fit', s.toFixed(3));
     wrap.style.marginBottom = (-(h * (1 - s))).toFixed(1) + 'px';
   }
@@ -274,8 +283,24 @@
       }
       updateSoundBtn();
     },
+    // iPhones mute browser-generated sound while the silent switch is on.
+    // Requesting "playback" audio (Safari 16.4+), or playing a silent <audio>
+    // loop on older versions, makes the page behave like a music player.
+    unlockIOS: function () {
+      try {
+        if (navigator.audioSession) { navigator.audioSession.type = 'playback'; return; }
+      } catch (e) {}
+      if (this.silent) return;
+      var a = new Audio(silentWav());
+      a.loop = true;
+      a.setAttribute('playsinline', '');
+      var p = a.play();
+      if (p && p.catch) p.catch(function () {});
+      this.silent = a;
+    },
     startSynth: function () {
       if (this.synth) return;
+      this.unlockIOS();
       try { this.ctx = this.ctx || new (window.AudioContext || window.webkitAudioContext)(); } catch (e) { return; }
       if (this.ctx.state === 'suspended') this.ctx.resume();
       this.synth = romanticPiece(this.ctx);
@@ -290,8 +315,23 @@
     pauseForHidden: function (hidden) {
       if (this.el) { if (hidden) this.el.pause(); else if (!this.muted) this.el.play().catch(function () {}); }
       if (this.ctx) { if (hidden) this.ctx.suspend(); else this.ctx.resume(); }
+      if (this.silent) { if (hidden) this.silent.pause(); else this.silent.play().catch(function () {}); }
     }
   };
+
+  // Half a second of silence as a WAV data URI (used by unlockIOS)
+  function silentWav() {
+    var n = 4000, sr = 8000, buf = new Uint8Array(44 + n), v = new DataView(buf.buffer), i;
+    function str(o, t) { for (var k = 0; k < t.length; k++) buf[o + k] = t.charCodeAt(k); }
+    str(0, 'RIFF'); v.setUint32(4, 36 + n, true); str(8, 'WAVE'); str(12, 'fmt ');
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+    v.setUint32(24, sr, true); v.setUint32(28, sr, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true);
+    str(36, 'data'); v.setUint32(40, n, true);
+    for (i = 44; i < buf.length; i++) buf[i] = 128;
+    var bin = '';
+    for (i = 0; i < buf.length; i++) bin += String.fromCharCode(buf[i]);
+    return 'data:audio/wav;base64,' + btoa(bin);
+  }
 
   function fadeEl(a, target, ms) {
     var from = a.volume, t0 = performance.now();

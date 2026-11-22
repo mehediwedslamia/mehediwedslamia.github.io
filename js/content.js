@@ -80,8 +80,8 @@ window.SITE = {
       eyebrow: 'How we met',
       title: 'Our Story',
       body: [
-        'We met at BRAC University, in an online teaching session. After that we kept chatting, mostly gossip, and somehow never ran out of things to say. Then we met in person, and kept meeting after that.',
-        'We chose each other first, and later our families gave their blessing too. We would love to have you with us on our wedding day.'
+        'We met at BRAC University, in an online teaching session. Then came the chats and the gossip, non-stop. One day we finally met in person, and it felt just like the old song: “আবার হবে তো দেখা, এ দেখাই শেষ দেখা নয়তো” (we will meet again; this is not our last meeting).',
+        'First we came to understand each other and made a promise to each other; later our families happily gave their blessing too. We would love to have you with us on our wedding day.'
       ],
       milestones: [
         { label: 'Chapter one', title: 'An online class at BRAC', text: 'We met in an online teaching session and started chatting.' },
@@ -103,7 +103,7 @@ window.SITE = {
       ]
     },
     schedule: { // placeholder
-      eyebrow: 'On the day',
+      eyebrow: 'The big day',
       title: 'Order of the Day',
       items: [
         { time: '12:30 PM', title: 'Guests arrive' },
@@ -182,7 +182,7 @@ window.SITE = {
     },
     countdown: {
       eyebrow: 'তারিখটা মনে রাখবেন',
-      title: 'আর মাত্র কটা দিন',
+      title: 'শুভ দিনের অপেক্ষায়',
       days: 'দিন', hours: 'ঘণ্টা', minutes: 'মিনিট', seconds: 'সেকেন্ড',
       when: 'বুধবার · ১৬ ডিসেম্বর ২০২৬ · দুপুর ১টা',
       done: 'আজ আমাদের বিয়ে!'
@@ -191,8 +191,8 @@ window.SITE = {
       eyebrow: 'যেভাবে শুরু',
       title: 'আমাদের গল্প',
       body: [
-        'আমাদের পরিচয় ব্র্যাক ইউনিভার্সিটির এক অনলাইন টিচিং সেশনে। তারপর শুরু হলো চ্যাট আর আড্ডা, কথা আর শেষই হতো না। একদিন সামনাসামনি দেখা হলো, তারপর থেকে দেখা হতেই থাকল।',
-        'আমরা নিজেরা আগেই ঠিক করে ফেলেছিলাম, পরে দুই পরিবারও খুশিমনে রাজি হলো। বিয়ের দিনে আপনি এলে আমরা খুব খুশি হব।'
+        'আমাদের পরিচয় ব্র্যাক ইউনিভার্সিটির এক অনলাইন টিচিং সেশনে। তারপর শুরু হলো চ্যাট আর আড্ডা, চলত নন-স্টপ কথা। একদিন সামনাসামনি দেখা হলো, আর মনে হলো, “আবার হবে তো দেখা, এ দেখাই শেষ দেখা নয়তো।”',
+        'আগে আমরা দুজন দুজনের মন বুঝেছি, একে অপরকে কথা দিয়েছি; পরে দুই পরিবারও খুশিমনে রাজি হলো। বিয়ের দিনে আপনি এলে আমরা খুব খুশি হব।'
       ],
       milestones: [
         { label: 'শুরু', title: 'অনলাইন সেশনে পরিচয়', text: 'ব্র্যাকের এক অনলাইন টিচিং সেশনে প্রথম কথা, তারপর চ্যাট আর আড্ডা।' },
@@ -214,7 +214,7 @@ window.SITE = {
       ]
     },
     schedule: {
-      eyebrow: 'বিয়ের দিন',
+      eyebrow: 'শুভ দিন',
       title: 'দিনের আয়োজন',
       items: [
         { time: 'দুপুর ১২:৩০', title: 'অতিথিদের আগমন' },

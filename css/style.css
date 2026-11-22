@@ -20,7 +20,8 @@
   --ink-soft: #6e5a55;
 
   --font-script: 'Pinyon Script', cursive;
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  /* Anek Bangla covers any Bangla words inside English text */
+  --font-serif: 'Cormorant Garamond', 'Anek Bangla', Georgia, serif;
   --font-sans: 'Jost', system-ui, sans-serif;
   --track: .32em;
   --track-sm: .2em;
@@ -720,12 +721,16 @@ html[lang="bn"] .countdown__when { font-size: 15px; }
 .story__body p + p { margin-top: 1em; }
 html[lang="en"] .story__body p:first-child::first-letter {
   float: left;
-  font-family: 'Pinyon Script', cursive;
-  font-size: 84px;
-  line-height: .9;
-  padding: 6px 12px 0 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 74px;
+  line-height: .82;
+  padding: 8px 10px 0 0;
   color: var(--maroon-600);
 }
+/* Bangla words inside English text: lighter and a touch smaller to sit with Cormorant */
+.bn-inline { font-family: 'Anek Bangla', sans-serif; font-weight: 400; font-size: .86em; color: var(--maroon-700); }
 html[lang="bn"] .story__body p { font-size: 18px; line-height: 1.95; }
 
 .timeline { list-style: none; margin: 0; padding: 0 0 0 30px; position: relative; }
@@ -1034,9 +1039,12 @@ html[lang="bn"] .footer__top { font-size: 14px; }
   .controls { top: calc(var(--curtain-h) + 12px); gap: 8px; }
   .icon-btn { width: 42px; height: 42px; }
   .pill-btn { height: 42px; padding: 0 14px; }
-  .hero { padding-top: calc(var(--curtain-h) + 84px); padding-bottom: 108px; }
-  .card__body { padding: 14px 14px 18px; }
-  .card__panel { padding: 36px 12px 40px; }
+  .hero { padding: calc(var(--curtain-h) + 70px) 10px 112px; }
+  .scroll-cue { gap: 10px; bottom: max(16px, env(safe-area-inset-bottom)); }
+  .scroll-cue__line { height: 36px; }
+  .card__body { padding: 12px 10px 16px; }
+  .card__floral { margin: 2px auto 6px; }
+  .card__panel { padding: 34px 10px 36px; }
   .card__day { font-size: 48px; }
   .card__request { font-size: 18px; }
   .envelope__intro { top: calc(var(--curtain-h) + 12vh); }
