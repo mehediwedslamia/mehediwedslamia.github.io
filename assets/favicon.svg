@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="g" cx="38%" cy="32%" r="75%">
+      <stop offset="0" stop-color="#cfa676"/><stop offset=".5" stop-color="#946545"/><stop offset="1" stop-color="#4f2f1c"/>
+    </radialGradient>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="#6b1a2a"/>
+  <circle cx="32" cy="32" r="21" fill="url(#g)"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#3a2214">ML</text>
+</svg>
