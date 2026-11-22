@@ -532,7 +532,17 @@ html[lang="bn"] .card__time { font-style: normal; font-size: 18px; }
 }
 html[lang="bn"] .card__venue { font-size: 18px; }
 .card__venue span { display: block; }
-.card__city { font-weight: 400; color: var(--ink-soft); margin-top: 2px; }
+.card__city {
+  margin-top: 6px;
+  white-space: pre-line;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 1.6;
+  letter-spacing: .04em;
+  text-transform: none;
+  color: var(--ink-soft);
+}
+html[lang="bn"] .card__city { font-size: 14px; letter-spacing: 0; }
 
 /* ---------- Scroll cue ---------- */
 .scroll-cue {
@@ -721,6 +731,17 @@ html[lang="bn"] .event__date { font-size: 15px; }
 .event__rows dt { font-family: var(--font-sans); font-size: 10.5px; letter-spacing: var(--track); text-transform: uppercase; color: var(--ink-soft); }
 html[lang="bn"] .event__rows dt { font-size: 13px; }
 .event__rows dd { margin: 0; font-size: 19px; color: var(--ink); }
+.event__addr {
+  display: block;
+  white-space: pre-line;
+  margin: 4px auto 0;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  letter-spacing: .02em;
+  opacity: .7;
+}
+html[lang="bn"] .event__addr { font-size: 14px; }
 html[lang="bn"] .event__rows dd { font-size: 16px; }
 
 .event--featured {
@@ -764,7 +785,7 @@ html[lang="bn"] .schedule__note { font-style: normal; font-size: 15px; }
   align-items: center;
 }
 .venue__name { font-family: var(--font-script); font-size: calc(clamp(50px, 6vw, 66px) * var(--script-scale)); line-height: 1.25; color: var(--maroon-600); }
-.venue__address { margin-top: 8px; font-family: var(--font-sans); font-size: 12.5px; letter-spacing: var(--track-sm); text-transform: uppercase; color: var(--gold-dark); }
+.venue__address { white-space: pre-line; line-height: 1.9; margin-top: 8px; font-family: var(--font-sans); font-size: 12.5px; letter-spacing: var(--track-sm); text-transform: uppercase; color: var(--gold-dark); }
 html[lang="bn"] .venue__address { font-size: 16px; }
 .venue__when { margin-top: 18px; font-style: italic; font-size: 20px; color: var(--ink); }
 html[lang="bn"] .venue__when { font-style: normal; font-size: 17px; }

@@ -67,7 +67,7 @@ window.SITE = {
       banglaDate: '১ পৌষ ১৪৩৩',
       time: 'at one o’clock in the afternoon',
       venue: 'The Royal Garden',
-      city: 'Dhaka'
+      city: 'Plot No 9/B, Sector 08, Uttara\nDhaka-Mymensingh Highway\nNear Abdullahpur Bus Stand, Dhaka 1230'
     },
     countdown: {
       eyebrow: 'Save the date',
@@ -99,7 +99,7 @@ window.SITE = {
       title: 'The Celebration',
       labels: { time: 'Time', venue: 'Venue', dress: 'Dress code' },
       items: [
-        { icon: 'rings', name: 'The Wedding', date: 'Wednesday, 16 December 2026', time: '1:00 PM onwards', venue: 'The Royal Garden, Dhaka', dress: 'Traditional festive' }
+        { icon: 'rings', name: 'The Wedding', date: 'Wednesday, 16 December 2026', time: '1:00 PM onwards', venue: 'The Royal Garden', address: 'Plot No 9/B, Sector 08, Uttara\nDhaka-Mymensingh Highway\nNear Abdullahpur Bus Stand, Dhaka 1230', dress: 'Traditional festive' }
       ]
     },
     schedule: { // placeholder
@@ -117,7 +117,7 @@ window.SITE = {
       eyebrow: 'Location',
       title: 'The Venue',
       name: 'The Royal Garden',
-      address: 'Dhaka, Bangladesh',
+      address: 'Plot No 9/B, Sector 08, Uttara\nDhaka-Mymensingh Highway\nNear Abdullahpur Bus Stand, Dhaka 1230',
       when: 'Wednesday, 16 December 2026 · 1:00 PM',
       directions: 'Get directions',
       facebook: 'View on Facebook'
@@ -178,7 +178,7 @@ window.SITE = {
       banglaDate: '১ পৌষ ১৪৩৩',
       time: 'দুপুর ১টা',
       venue: 'দ্য রয়্যাল গার্ডেন',
-      city: 'ঢাকা'
+      city: 'প্লট নং ৯/বি, সেক্টর ০৮, উত্তরা\nঢাকা-ময়মনসিংহ মহাসড়ক\nআব্দুল্লাহপুর বাসস্ট্যান্ডের কাছে, ঢাকা ১২৩০'
     },
     countdown: {
       eyebrow: 'তারিখটা মনে রাখবেন',
@@ -210,7 +210,7 @@ window.SITE = {
       title: 'শুভ বিবাহ',
       labels: { time: 'সময়', venue: 'স্থান', dress: 'পোশাক' },
       items: [
-        { icon: 'rings', name: 'বিয়ে', date: 'বুধবার, ১৬ ডিসেম্বর ২০২৬', time: 'দুপুর ১টা থেকে', venue: 'দ্য রয়্যাল গার্ডেন, ঢাকা', dress: 'দেশীয় পোশাক' }
+        { icon: 'rings', name: 'বিয়ে', date: 'বুধবার, ১৬ ডিসেম্বর ২০২৬', time: 'দুপুর ১টা থেকে', venue: 'দ্য রয়্যাল গার্ডেন', address: 'প্লট নং ৯/বি, সেক্টর ০৮, উত্তরা\nঢাকা-ময়মনসিংহ মহাসড়ক\nআব্দুল্লাহপুর বাসস্ট্যান্ডের কাছে, ঢাকা ১২৩০', dress: 'দেশীয় পোশাক' }
       ]
     },
     schedule: {
@@ -228,7 +228,7 @@ window.SITE = {
       eyebrow: 'কোথায়',
       title: 'অনুষ্ঠানস্থল',
       name: 'দ্য রয়্যাল গার্ডেন',
-      address: 'ঢাকা, বাংলাদেশ',
+      address: 'প্লট নং ৯/বি, সেক্টর ০৮, উত্তরা\nঢাকা-ময়মনসিংহ মহাসড়ক\nআব্দুল্লাহপুর বাসস্ট্যান্ডের কাছে, ঢাকা ১২৩০',
       when: 'বুধবার, ১৬ ডিসেম্বর ২০২৬ · দুপুর ১টা',
       directions: 'ম্যাপে দেখুন',
       facebook: 'ফেসবুক পেজ'

@@ -102,7 +102,8 @@
         '<p class="event__date">' + esc(e.date) + '</p>' +
         '<dl class="event__rows">' +
           '<div><dt>' + esc(L.time) + '</dt><dd>' + esc(e.time) + '</dd></div>' +
-          '<div><dt>' + esc(L.venue) + '</dt><dd>' + esc(e.venue) + '</dd></div>' +
+          '<div><dt>' + esc(L.venue) + '</dt><dd>' + esc(e.venue) +
+            (e.address ? '<span class="event__addr">' + esc(e.address) + '</span>' : '') + '</dd></div>' +
           '<div><dt>' + esc(L.dress) + '</dt><dd>' + esc(e.dress) + '</dd></div>' +
         '</dl></article>';
     }).join('');
